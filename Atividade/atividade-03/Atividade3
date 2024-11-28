@@ -1,0 +1,17 @@
+import 'dart:async';
+import 'dart:isolate';
+
+void main() {
+  print('Lucas dos Santos'); 
+
+
+  print('Iniciando isolate...');
+
+  Isolate.spawn(runIsolate, 'Dart Isolate Example').then((isolate) {
+    print('Isolate iniciado');
+  });
+}
+
+void runIsolate(String message) {
+  print('Mensagem recebida no isolate: $message');
+}
